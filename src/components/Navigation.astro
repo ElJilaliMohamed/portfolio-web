@@ -1,5 +1,7 @@
 ---
-
+import Image from 'astro/components/Image.astro';
+import mozam from '../img/mozam-logo.webp';
+import '../styles/global.css';
 ---
 
 <!doctype html>
@@ -8,20 +10,37 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="stylesheet" href="https://use.typekit.net/coi1biv.css" />
     <meta name="generator" content={Astro.generator} />
     <title>My Portfolio</title>
   </head>
   <body>
-    <nav>
-      <ul>
-        <li>
-          <a href="/">Home</a>
-        </li>
-        <li>
-          <a href="/about/">About</a>
-        </li>
-      </ul>
-    </nav>
+    <header>
+      <nav>
+        <div class="img-header">
+          <Image src={mozam} alt="mozam" height={60} />
+        </div>
+        <div class="menu-items">
+          <input type="checkbox" id="menu-toggle" />
+          <label for="menu-toggle" class="menu-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+          </label>
+          <ul class="nav-links">
+            <li>
+              <a href="/" class="nav-link">Home</a>
+            </li>
+            <li>
+              <a href="/about/" class="nav-link">About</a>
+            </li>
+            <li>
+              <a href="/projectlog/" class="nav-link">Project Log</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
   </body>
 </html>
 
@@ -33,5 +52,79 @@
     height: 100%;
   }
 
-  
+  ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: end;
+  }
+  li {
+    list-style-type: none;
+    margin: 0.3em;
+  }
+  nav {
+    background-color: var(--black);
+    display: flex;
+    padding: 0.5em;
+    flex-direction: row;
+    overflow: hidden;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .menu-items {
+    display: flex;
+  }
+  .nav-link {
+    margin: 0.2em;
+    font-family: 'inge-variable', sans-serif;
+    font-variation-settings: 'slnt' 0;
+    font-size: 2.2em;
+    letter-spacing: 0.027em;
+    color: white;
+  }
+  #menu-toggle {
+    display: none;
+  }
+  .menu-icon {
+    display:none;
+    flex-direction: column;
+    gap: 5px;
+  }
+  .menu-icon span {
+    width: 1.875em;
+    height: 0.1875em;
+    background: #fff;
+    transition: all 0.3s;
+  }
+
+  @media (max-width: 768px) {
+    .menu-icon {
+      display: flex;
+    }
+
+    .nav-links {
+      position: absolute;
+      top: 4em;
+      left: 0;
+      right: 0;
+      background: #222;
+      flex-direction: column;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+
+    #menu-toggle:checked ~ .nav-links {
+      max-height: 12.5em;
+    }
+    #menu-toggle:checked + .menu-icon span:nth-child(1) {
+      transform: rotate(45deg) translateY(10px);
+    }
+    #menu-toggle:checked + .menu-icon span:nth-child(2) {
+      opacity: 0;
+    }
+    #menu-toggle:checked + .menu-icon span:nth-child(3) {
+      transform: rotate(-45deg) translateY(-10px);
+    }
+  }
 </style>

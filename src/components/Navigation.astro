@@ -16,26 +16,26 @@ import '../styles/global.css';
   </head>
   <body>
     <header>
-      <nav>
-        <div class="img-header">
+      <nav class="navbar">
+        <div class="navbar__img">
           <Image src={mozam} alt="mozam" height={60} />
         </div>
-        <div class="menu-items">
+        <div class="navbar__items">
           <input type="checkbox" id="menu-toggle" />
           <label for="menu-toggle" class="menu-icon">
             <span></span>
             <span></span>
             <span></span>
           </label>
-          <ul class="nav-links">
+          <ul class="navbar__links">
             <li>
-              <a href="/" class="nav-link">Home</a>
+              <a href="/" class="navbar__reflink">Home</a>
             </li>
             <li>
-              <a href="/about/" class="nav-link">About</a>
+              <a href="/about/" class="navbar__reflink">About</a>
             </li>
             <li>
-              <a href="/projectlog/" class="nav-link">Project Log</a>
+              <a href="/projectlog/" class="navbar__reflink">Project Log</a>
             </li>
           </ul>
         </div>
@@ -66,27 +66,29 @@ import '../styles/global.css';
     background-color: var(--black);
     display: flex;
     padding: 0.5em;
+    padding-inline: 1em;
     flex-direction: row;
     overflow: hidden;
     align-items: center;
     justify-content: space-between;
   }
-  .menu-items {
+  .navbar__items {
     display: flex;
   }
-  .nav-link {
+  .navbar__reflink {
     margin: 0.2em;
     font-family: 'inge-variable', sans-serif;
     font-variation-settings: 'slnt' 0;
     font-size: 2.2em;
     letter-spacing: 0.027em;
     color: white;
+    margin-right: 0.9em;
   }
   #menu-toggle {
     display: none;
   }
   .menu-icon {
-    display:none;
+    display: none;
     flex-direction: column;
     gap: 5px;
   }
@@ -102,7 +104,7 @@ import '../styles/global.css';
       display: flex;
     }
 
-    .nav-links {
+    .navbar__links {
       position: absolute;
       top: 4em;
       left: 0;
@@ -114,7 +116,7 @@ import '../styles/global.css';
       transition: max-height 0.3s ease;
     }
 
-    #menu-toggle:checked ~ .nav-links {
+    #menu-toggle:checked ~ .navbar__links {
       max-height: 12.5em;
     }
     #menu-toggle:checked + .menu-icon span:nth-child(1) {

@@ -1,5 +1,13 @@
 ---
+import Image from 'astro/components/Image.astro';
+import placeholder from '../img/placeholder.jpeg';
 import Navigation from '../components/Navigation.astro';
 ---
 
 <Navigation />
+<header class="head">
+  <p class="head__title">Behind the scenes of my current work</p>
+</header>
+<div>
+  <Image src={placeholder} alt="imgholder" />
+</div>

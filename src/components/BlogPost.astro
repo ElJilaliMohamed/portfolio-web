@@ -1,0 +1,24 @@
+---
+const { title, url, description } = Astro.props;
+
+---
+
+<li>
+  <a href={url}>{title}</a>
+  <p class="desc">{description}</p>
+</li>
+<style>
+  a {
+    font-family: 'orbitron', sans-serif;
+    font-weight: 900;
+    font-style: normal;
+    font-size: 1.6rem;
+    padding-top: 1em;
+  }
+  p {
+    font-family: 'orbitron', sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 1.3em;
+  }
+</style>

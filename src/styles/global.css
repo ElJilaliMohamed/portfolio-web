@@ -14,6 +14,26 @@ img {
   height: auto;
   max-width: 100%;
 }
+
+li {
+  list-style-type: none;
+  margin: 0.3em;
+}
+nav {
+  background-color: var(--black);
+  display: flex;
+  padding: 0.5em;
+  padding-inline: 1em;
+  flex-direction: row;
+  overflow: hidden;
+  align-items: center;
+  justify-content: space-between;
+}
+footer {
+  background-color: var(--black);
+  color: var(--white);
+  padding: 2em;
+}
 .container {
   padding-inline: 1em;
 }
@@ -26,18 +46,82 @@ img {
 }
 .subjectText {
   font-family: 'orbitron', sans-serif;
+  font-weight: 900;
+  font-style: normal;
+  font-size: 1.6rem;
+  padding-top: 1em;
+}
+.regularText {
+  font-family: 'orbitron', sans-serif;
   font-weight: 500;
   font-style: normal;
+  font-size: 1.3em;
 }
-ul {
+.navbar__links {
   display: flex;
   flex-direction: row;
+  align-items: center;
+  justify-content: end;
 }
-li {
-  list-style-type: none;
-  margin: 0.3em;
+
+.navbar__items {
+  display: flex;
+}
+.navbar__reflink {
+  margin: 0.2em;
+  font-family: 'inge-variable', sans-serif;
+  font-variation-settings: 'slnt' 0;
+  font-size: 2.2em;
+  letter-spacing: 0.027em;
+  color: white;
+  margin-right: 0.9em;
+  text-decoration: none;
+}
+#menu-toggle {
+  display: none;
+}
+.menu-icon {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+}
+.menu-icon span {
+  width: 1.875em;
+  height: 0.1875em;
+  background: #fff;
+  transition: all 0.3s;
+}
+
+@media (max-width: 768px) {
+  .menu-icon {
+    display: flex;
+  }
+
+  .navbar__links {
+    position: absolute;
+    top: 4em;
+    left: 0;
+    right: 0;
+    background: #222;
+    flex-direction: column;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  #menu-toggle:checked ~ .navbar__links {
+    max-height: 12.5em;
+  }
+  #menu-toggle:checked + .menu-icon span:nth-child(1) {
+    transform: rotate(45deg) translateY(10px);
+  }
+  #menu-toggle:checked + .menu-icon span:nth-child(2) {
+    opacity: 0;
+  }
+  #menu-toggle:checked + .menu-icon span:nth-child(3) {
+    transform: rotate(-45deg) translateY(-10px);
+  }
 }
 a {
-  text-decoration: none;
   color: black;
 }

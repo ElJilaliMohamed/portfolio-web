@@ -1,8 +1,22 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro"
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import BlogPost from '../components/BlogPost.astro';
+const pageTitle = 'Mozam Portfolio';
+const allPosts = await getCollection('blog');
 ---
 
-<BaseLayout title="Mozam Portfolio">
-</BaseLayout>
-
-
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{pageTitle}</title>
+  </head>
+  <body>
+    <BaseLayout title={pageTitle}>
+      <ul>
+        {allPosts.map((post: any) => <BlogPost url={`/content/${post.id}`} title={post.data.title} description={post.data.description} />)}
+      </ul>
+    </BaseLayout>
+  </body>
+</html>

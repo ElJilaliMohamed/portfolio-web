@@ -1,8 +1,16 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro"
+import { getCollection } from 'astro:content';
+import BlogPost from '../components/BlogPost.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const pageTitle = 'Mozam Portfolio';
+const allPosts = Object.values(import.meta.glob('../pages/content/*.md', { eager: true }));
+console.log(allPosts);
 ---
 
-<BaseLayout title="Mozam Portfolio">
+<BaseLayout title={pageTitle}>
+  <ul>
+    {allPosts.map((post: any) => <BlogPost url={`/pages/content/${post.id}`} title={post.frontmatter.title} description={post.frontmatter.description}/> )}
+  </ul>
 </BaseLayout>
-
 

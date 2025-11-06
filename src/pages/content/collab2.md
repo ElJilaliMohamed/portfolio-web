@@ -2,7 +2,7 @@
 title: "Prequel comic for the creative studio TSE"
 description: 'My 2nd collaboration and first time working together with people from Berlin'
 image:
-    url: "/img/collab-tab-02.webp"
+    url: "collab-tab-02.webp"
     alt: "2nd paid client work."
     tags: ['comic', 'analog drawing', ]
 ---

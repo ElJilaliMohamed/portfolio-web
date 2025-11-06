@@ -2,9 +2,9 @@
 title: "ZLDR T-shirt illustrations"
 description: 'First paid client work to draw illustrations.'
 image:
-    url: "/img/collab-tab-01.webp"
+    url: "collab-tab-01.webp"
     alt: "First paid client work."
-    tags: ['illustration', 'analog drawing', ]
+tags: ['illustration', 'analog drawing', ]
 ---
 
 My very first client work for a group of young Flemish music artists called ZLDR. They wanted me to make illustrations that they could use for T-shirt, hoodies & stickers.

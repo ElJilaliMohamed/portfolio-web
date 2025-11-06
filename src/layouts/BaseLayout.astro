@@ -1,13 +1,8 @@
 ---
 const { title } = Astro.props;
-import Navigation from '../components/Navigation.astro';
 import Footer from '../components/Footer.astro';
+import Navigation from '../components/Navigation.astro';
 import '../styles/global.css';
-import Image from 'astro/components/Image.astro';
-import mozamPolaroid from '../img/mozam-polaroid.webp';
-import collab01 from '../img/collab-tab-01.webp';
-import collab02 from '../img/collab-tab-02.webp';
-import collab03 from '../img/collab-tab-03.webp';
 ---
 
 <!doctype html>
@@ -23,44 +18,12 @@ import collab03 from '../img/collab-tab-03.webp';
   </head>
   <body>
     <Navigation />
-    <div class="hero">
-      <div class="head">
-        <p class="head__title">Mozam scribbles creativity!</p>
-      </div>
-      <div>
-        <Image src={mozamPolaroid} alt="placeholder" class="hero__img" />
-      </div>
-    </div>
-
-    <div class="container">
-      <p class="subjectText">Highlighted Projects:</p>
-
-      <div class="highlights">
-        <div>
-          <p class="regularText">T-shirt Illustrations for artists duo "ZLDR".</p>
-          <Image src={collab01} alt="placeholder" class="hero__img" />
-        </div>
-        <div>
-          <p class="regularText">Comic prequel for a creative studio in Berlin.</p>
-          <Image src={collab02} alt="placeholder" class="hero__img" />
-        </div>
-        <div>
-          <p class="regularText">First published illustration in a publishing comic.</p>
-          <Image src={collab03} alt="placeholder" class="hero__img" />
-        </div>
-      </div>
-    </div>
-
-    <div class="container">
-      <p class="subjectText">
-        More content here:
-      </p>
-    </div>
+    <slot />
     <Footer />
   </body>
 </html>
 <style>
-  .highlights{
+  .highlights {
     padding-top: 1rem;
   }
   .hero__img {

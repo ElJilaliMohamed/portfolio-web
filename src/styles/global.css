@@ -42,10 +42,6 @@ footer{
   font-style: normal;
   font-size: 1.3em;
 }
-ul {
-  display: flex;
-  flex-direction: row;
-}
 li {
   list-style-type: none;
   margin: 0.3em;

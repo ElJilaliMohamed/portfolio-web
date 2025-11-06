@@ -1,6 +1,6 @@
 ---
 title: "My first published comic illustration"
-description: 'My first paid client work to draw illustrations for these 2 very sympathic artists.'
+description: 'My first paid client work to draw illustrations.'
 image:
     url: "collab-tab-01.webp"
     alt: "First paid client work."

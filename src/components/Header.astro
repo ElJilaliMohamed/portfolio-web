@@ -1,23 +1,17 @@
 ---
+import Image from 'astro/components/Image.astro';
+import mozam from '../img/mozam-logo.webp';
+import '../styles/global.css';
 import Menu from './Menu.astro';
 import Navigation from './Navigation.astro';
 ---
 
-<header>
-  <nav>
-    <div>
-      <Menu />
-    </div>
+<nav class="navbar">
+  <div class="navbar__img">
+    <Image src={mozam} alt="mozam" height={60} />
+  </div>
+  <div class="navbar__items">
+    <Menu />
     <Navigation />
-  </nav>
-</header>
-<script>
-  import '../scripts/menu.js';
-</script>
-
-<style>
-  div {
-    display: flex;
-    justify-content: space-between;
-  }
-</style>
+  </div>
+</nav>

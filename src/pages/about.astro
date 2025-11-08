@@ -2,12 +2,12 @@
 import Image from 'astro/components/Image.astro';
 import placeholder from '../img/placeholder.jpeg';
 import Header from '../components/Header.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
-<Header />
-<header class="head">
+<BaseLayout>
   <p class="head__title">Cool projects & nice stuff I learned</p>
-</header>
-<div>
-  <Image src={placeholder} alt="imgholder" />
-</div>
+  <div>
+    <Image src={placeholder} alt="imgholder" />
+  </div>
+</BaseLayout>

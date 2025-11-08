@@ -103,6 +103,7 @@ footer {
     left: 0;
     right: 0;
     background: #222;
+    opacity: 0.85;
     flex-direction: column;
     max-height: 0;
     overflow: hidden;

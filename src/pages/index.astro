@@ -4,7 +4,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import BlogPost from '../components/BlogPost.astro';
 import Hero from '../components/Hero.astro';
 const pageTitle = 'Mozam Portfolio';
-const allPosts = await getCollection('blog');
+const allPosts = await getCollection('collabs');
 ---
 
 <html lang="en">
@@ -18,7 +18,7 @@ const allPosts = await getCollection('blog');
       <BaseLayout title={pageTitle}>
         <Hero />
         <ul>
-          {allPosts.map((post: any) => <BlogPost url={`/content/${post.id}`} title={post.data.title} description={post.data.description} />)}
+          {allPosts.map((post) => <BlogPost url={`/content/${post.id}`} title={post.data.title} description={post.data.description} />)}
         </ul>
       </BaseLayout>
     </div>

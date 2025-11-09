@@ -1,13 +1,28 @@
 ---
-import Image from 'astro/components/Image.astro';
-import placeholder from '../img/placeholder.jpeg';
-import Header from '../components/Header.astro';
+import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import BlogPost from '../components/BlogPost.astro';
+const pageTitle = 'About Me';
+const allPosts = await getCollection('aboutMe');
 ---
 
-<BaseLayout>
-  <p class="head__title">Cool projects & nice stuff I learned</p>
-  <div>
-    <Image src={placeholder} alt="imgholder" />
-  </div>
-</BaseLayout>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{pageTitle}</title>
+  </head>
+  <body>
+    <div class="bg-img">
+      <BaseLayout title={pageTitle}>
+        <div class="container ">
+          <p class="regularText">Here you can learn more about things I did these past weeks</p>
+          <p class="subjectText">October - November Blog</p>
+          <ul>
+            {allPosts.map((post) => <BlogPost url={`/blog/${post.id}`} title={post.data.title} description={post.data.description} image={post.data.image.src} />)}
+          </ul>
+        </div>
+      </BaseLayout>
+    </div>
+  </body>
+</html>

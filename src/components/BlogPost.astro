@@ -1,24 +1,37 @@
 ---
-const { title, url, description } = Astro.props;
-
+const { title, url, description, image } = Astro.props;
 ---
 
 <li>
-  <a href={url}>{title}</a>
-  <p class="desc">{description}</p>
+  <div class="btn-bg">
+    <a href={url}
+      >{title}
+      <p class="desc">{description}</p>
+    </a>
+  </div>
 </li>
 <style>
+  .btn-bg {
+    background-color: rgb(228, 228, 228);
+    padding: 1rem;
+    border-radius: 0.6rem;
+  }
   a {
     font-family: 'orbitron', sans-serif;
     font-weight: 900;
     font-style: normal;
-    font-size: 1.6rem;
-    padding-top: 1em;
+    font-size: 1.3rem;
+    color: black;
+    text-decoration: none;
   }
-  p {
+  .desc {
     font-family: 'orbitron', sans-serif;
     font-weight: 500;
     font-style: normal;
-    font-size: 1.3em;
+    padding-top: 0.4rem;
+    font-size: 0.85em;
+  }
+  li {
+    padding: 1em 0 1.4em 0;
   }
 </style>

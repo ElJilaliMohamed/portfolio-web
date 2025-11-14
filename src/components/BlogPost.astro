@@ -16,6 +16,12 @@ const { title, url, description, image } = Astro.props;
     padding: 1rem;
     border-radius: 0.6rem;
   }
+  @media (min-width: 993px) {
+    .btn-bg {
+      max-width: 60%;
+    }
+  }
+
   a {
     font-family: 'orbitron', sans-serif;
     font-weight: 900;

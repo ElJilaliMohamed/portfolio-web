@@ -34,10 +34,6 @@ footer {
   color: var(--white);
   padding: 2em;
 }
-button{
-  border: none;
-  padding: 1em;
-}
 a .navbar__reflink{
   font-family: 'orbitron', sans-serif;
   font-weight: 900;

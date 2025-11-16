@@ -1,11 +1,8 @@
 ---
 title: "Recent book that I'm reading"
 description: 'The Creative Act: A Way of Being'
-image: 'img/blogimg2.jpg'
-image1: ''
-image2: ''
-image3: ''
-image4: ''
+image: ['img/blogimg2.jpg','','','','']
+
 tags: ['book']
 ---
 

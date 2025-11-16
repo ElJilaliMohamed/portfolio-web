@@ -1,43 +1,119 @@
 ---
+import Image from 'astro/components/Image.astro';
+import speechBalloon from '../collabs/img/titleBalloon.png';
+import rippedPaper from '../collabs/img/rippedTaped-paper.png';
 const { title, url, description, image } = Astro.props;
 ---
 
-<li>
-  <div class="btn-bg">
-    <a href={url}
-      >{title}
-      <p class="desc">{description}</p>
-    </a>
-  </div>
-</li>
-<style>
-  .btn-bg {
-    background-color: rgb(228, 228, 228);
-    padding: 1rem;
-    border-radius: 0.6rem;
-  }
-  @media (min-width: 993px) {
-    .btn-bg {
-      max-width: 60%;
-    }
-  }
+<div class="btn-bg">
+  <a href={url} class="orbitron-style">
+    <div class="title-comp">
+      <Image src={speechBalloon} alt="" class="balloon-img" />
+      <p class="title-balloon absolute-center">{title}</p>
+    </div>
+    <div>
+      <img src={image} alt="" width="700" class="img-collab" />
+      <div class="desc-comp">
+        <p class="regularText absolute-center">{description}</p>
+        <Image src={rippedPaper} alt="" class="ripped-paper" />
+      </div>
+    </div>
+  </a>
 
-  a {
-    font-family: 'orbitron', sans-serif;
-    font-weight: 900;
-    font-style: normal;
-    font-size: 1.3rem;
-    color: black;
-    text-decoration: none;
-  }
-  .desc {
-    font-family: 'orbitron', sans-serif;
-    font-weight: 500;
-    font-style: normal;
-    padding-top: 0.4rem;
-    font-size: 0.85em;
-  }
-  li {
-    padding: 1em 0 1.4em 0;
-  }
-</style>
+  <style>
+    .btn-bg {
+      background-color: rgb(228, 228, 228);
+      padding: 1rem;
+      border-radius: 0.6rem;
+      margin: 1em 1em 1.4em 0.5em;
+    }
+    .img-collab {
+      transition: 0.3s;
+    }
+    .btn-bg:hover {
+      .title-comp {
+        animation: updown 0.7s infinite alternate;
+      }
+      .img-collab {
+        box-shadow: 0 5px 30px rgb(153, 19, 19);
+      }
+    }
+
+    .balloon-img {
+      position: absolute;
+      top: 0;
+    }
+
+    a {
+      font-weight: 900;
+    }
+    .desc-comp {
+      position: relative;
+      padding-top: 1rem;
+    }
+    .desc {
+      font-weight: 500;
+    }
+    .ripped-paper {
+      height: auto;
+      max-width: 100%;
+      z-index: 0;
+    }
+
+    @media (min-width: 1080px) {
+      .btn-bg {
+        background: none;
+        width: 29%;
+      }
+      .title-comp {
+        padding-top: 12rem;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .absolute-center {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      .title-balloon {
+        max-width: 50%;
+        font-size: 1.4rem;
+        text-align: center;
+        padding-bottom: 1.7rem;
+        z-index: 1;
+      }
+      .desc {
+        width: 70%;
+        font-size: 1em;
+        z-index: 1;
+      }
+    }
+
+    @media (max-width: 1080px) {
+      .btn-bg {
+        max-width: 40%;
+      }
+      .balloon-img,
+      .ripped-paper {
+        display: none;
+      }
+    }
+    @media (max-width: 768px) {
+      .btn-bg {
+        max-width: 100%;
+      }
+    }
+
+    @keyframes updown {
+      from {
+        transform: translateY(0%);
+      }
+      to {
+        transform: translateY(-10%);
+      }
+    }
+  </style>
+</div>

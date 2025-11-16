@@ -1,11 +1,8 @@
 ---
 title: "Enki Bilal's Bug"
 description: "Enki's newest graphic novel series"
-image: 'img/blogimg5.jpg'
-image1: ''
-image2: ''
-image3: ''
-image4: ''
+image: ['img/blogimg5.jpg','','','','']
+
 tags: ['graphic novel', 'book']
 ---
 

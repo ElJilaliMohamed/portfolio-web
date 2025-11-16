@@ -1,7 +1,36 @@
 ---
-
+const platform = ['Instagram', 'Twitter'];
+const username = ['mangaka.mozam', 'sanartmo'];
 ---
 
 <footer>
-  <p class="regularText">This is some Footer content</p>
+  <div class="footer-comp">
+    <div class="regularText orbitron-style">
+      <p>check out more behind the scenes stuff!:</p>
+      <ul>
+        <li>
+          <a href={`https://www.${platform[0]}.com/${username[0]}`} class="footer-link">{platform[0]}</a>!
+        </li>
+        <li>
+          <a href={`https://www.${platform[1]}.com/${username[1]}`} class="footer-link">{platform[1]}</a>!
+        </li>
+      </ul>
+    </div>
+    <div class="orbitron-style protected-work">
+      <p>All the projects presented are fully my owned by "Mozam Productions",<br /> it is prohibited to use any of the content for your own personal or commercial use.</p>
+    </div>
+  </div>
 </footer>
+<style>
+  .footer-comp {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: start;
+  }
+  .protected-work {
+    font-size: 1rem;
+    font-style: italic;
+    padding: 1rem;
+  }
+</style>

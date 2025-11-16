@@ -15,14 +15,24 @@ const allPosts = await getCollection('aboutMe');
   <body>
     <div class="bg-img">
       <BaseLayout title={pageTitle}>
-        <div class="container ">
-          <p class="regularText">Here you can learn more about things I did these past weeks</p>
-          <p class="subjectText">October - November Blog</p>
-          <ul>
-            {allPosts.map((post) => <BlogPost url={`/blog/${post.id}`} title={post.data.title} description={post.data.description} image={post.data.image.src} />)}
+        <div class="container">
+          <p class="regularText orbitron-style">Here you can learn more about things I did these past weeks</p>
+          <p class="subjectText orbitron-style">October - November Blog</p>
+          <div class="items-horizontal">
+            {allPosts.map((post) => <BlogPost url={`/blog/${post.id}`} title={post.data.title} description={post.data.description} image={post.data.image[0].src} />)}
           </ul>
         </div>
       </BaseLayout>
     </div>
   </body>
 </html>
+<style>
+  .items-horizontal {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-image: url(../collabs/img/grid-bg.png);
+    background-size: contain;
+  }
+</style>

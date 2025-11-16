@@ -1,11 +1,7 @@
 ---
-title: 'Prequel comic for the creative studio "TSE"'
-description: 'My 2nd collaboration and first time working together with people from Berlin'
-image: 'img/collab-tab-02.webp'
-image1: 'img/collab2charadesign.png'
-image2: 'img/collab2charadesign2.png'
-image3: 'img/collab2BTS.jpg'
-image4: 'img/collab2BTS2.jpg'
+title: 'Comic for creative studio "TSE"'
+description: 'My 2nd collab & first time working with people from Berlin'
+image: ['img/collab-webtab-02.png', 'img/collab2charadesign.png', 'img/collab2charadesign2.png', 'img/collab2BTS.jpg', 'img/collab2BTS2.jpg']
 tags: ['art project']
 ---
 

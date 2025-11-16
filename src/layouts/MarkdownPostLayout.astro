@@ -1,34 +1,49 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 
-
 const { frontmatter } = Astro.props;
 ---
 
 <BaseLayout title={frontmatter.title}>
-
-
-  <div class="content">
-    <img src={frontmatter.image.src} alt="" />
-    <div class="text">
-      <slot />
+  <div class="content orbitron-style">
+    <div class="top-part">
+      <img src={frontmatter.image[0].src} alt="" />
+      <div class="text">
+        <slot />
+      </div>
     </div>
-    <img src={frontmatter.image1.src} alt="" />
-    <img src={frontmatter.image2.src} alt="" />
-    <img src={frontmatter.image3.src} alt="" />
-    <img src={frontmatter.image4.src} alt="" />
+    <div class="img-group">
+      <img src={frontmatter.image[1].src} alt="" />
+      <img src={frontmatter.image[2].src} alt="" />
+      <img src={frontmatter.image[3].src} alt="" />
+      <img src={frontmatter.image[4].src} alt="" />
+    </div>
   </div>
   <style>
     .content {
-      font-family: 'orbitron', sans-serif;
       font-weight: 500;
-      font-style: normal;
       font-size: 1em;
       padding-inline: 1em;
+    }
+    .top-part {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      padding: 1rem;
     }
     .text {
       padding-top: 1em;
       padding-bottom: 1em;
+      margin: auto;
+      max-width: 50%;
+    }
+    .detail-comp .img-group {
+      padding: 4rem 0;
+    }
+    @media (max-width: 768px) {
+      .text {
+        max-width: 100%;
+      }
     }
   </style>
 </BaseLayout>

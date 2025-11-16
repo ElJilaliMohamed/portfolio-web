@@ -8,11 +8,8 @@ const collabs = defineCollection({
     schema:({image}) => z.object({
         title: z.string(),
         description: z.string(),
-        image: image(),
-        image1: image(),
-        image2: image(),
-        image3: image(),
-        image4: image(),
+        image:z.array(image()),
+
       })
 
 })
@@ -23,11 +20,8 @@ const aboutMe = defineCollection({
   schema:({image}) => z.object({
       title: z.string(),
       description: z.string(),
-      image: image(),
-      image1: image(),
-      image2: image(),
-      image3: image(),
-      image4: image(),
+      image:z.array(image()),
+
     })
 
 })

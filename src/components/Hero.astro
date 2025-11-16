@@ -1,22 +1,45 @@
 ---
 import Image from 'astro/components/Image.astro';
-
+import paperMozam from '../collabs/img/paper-mozam.png';
 import mozamPolaroid from '../collabs/img/mozam-polaroid.webp';
 ---
 
 <div class="hero__img">
+  <div class="hero-comp">
+    <p class="regularText hero-txt orbitron-style">Art, drawing, designing, coding. Just being clever with concepts on different types of media, especially manga storytelling.</p>
+    <Image src={paperMozam} alt="mozam" srcset="" class="paper-mozam" width={600} />
+  </div>
   <Image src={mozamPolaroid} alt="mozam" srcset="" class="mozam" />
 </div>
+
 <style>
   .hero__img {
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    background-image: url('../collabs/img/paper-grid-new.png');
+    background-repeat: no-repeat;
+    background-size: cover;
   }
-  @media (min-width: 768px) {
-    .hero__img {
-      display: flex !important;
-      justify-content: center !important;
-      max-width: 60%;
+  .hero-comp {
+    position: relative;
+  }
+  .hero-txt {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .mozam {
+    height: auto;
+    max-width: 30%;
+  }
+  @media (max-width: 992px) {
+    .mozam {
+      max-width: 80%;
     }
   }
+
+  
 </style>

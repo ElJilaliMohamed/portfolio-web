@@ -17,10 +17,20 @@ const allPosts = await getCollection('collabs');
     <div class="bg-img">
       <BaseLayout title={pageTitle}>
         <Hero />
-        <ul>
-          {allPosts.map((post) => <BlogPost url={`/content/${post.id}`} title={post.data.title} description={post.data.description} />)}
-        </ul>
+
+        <div class="items-horizontal">
+          {allPosts.map((post) => <BlogPost url={`/content/${post.id}`} title={post.data.title} description={post.data.description} image={post.data.image[0].src} />)}
+        </div>
       </BaseLayout>
     </div>
   </body>
 </html>
+<style>
+  .items-horizontal {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-image: url(../collabs/img/grid-bg.png);
+    background-size: contain;
+  }
+</style>

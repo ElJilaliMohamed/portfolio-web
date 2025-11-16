@@ -1,11 +1,8 @@
 ---
 title: 'My first published comic illustration'
-description: 'My first paid client work to draw illustrations.'
-image: 'img/collab-tab-03.webp'
-image1: 'img/collab3BTS.jpg'
-image2: 'img/collab3BTS2.jpg'
-image3: ''
-image4: ''
+description: 'A drawing to celebrate the release of the last comic book.'
+image: ['img/collab-webtab-03.png', 'img/collab3BTS.jpg', 'img/collab3BTS2.jpg', '', '']
+
 tags: ['art project']
 ---
 

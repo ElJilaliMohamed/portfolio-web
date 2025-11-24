@@ -7,6 +7,6 @@ import preact from '@astrojs/preact';
 export default defineConfig({
   integrations: [preact()],
   site: 'https://ElJilaliMohamed.github.io',
-  base: '/portfolio-web',
+  base: '/portfolio-web/',
 });
 

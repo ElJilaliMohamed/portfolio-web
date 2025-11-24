@@ -6,7 +6,7 @@ const { title, url, description, image } = Astro.props;
 ---
 
 <div class="btn-bg">
-  <a href={url} class="orbitron-style">
+  <a href=`/portfolio-web${url}` class="orbitron-style">
     <div class="title-comp">
       <Image src={speechBalloon} alt="" class="balloon-img" />
       <p class="title-balloon absolute-center">{title}</p>

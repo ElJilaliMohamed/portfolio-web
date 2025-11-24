@@ -25,5 +25,5 @@ const aboutMe = defineCollection({
     })
 
 })
-// Export a single `collections` object to register your collection(s)
+
 export const collections = { collabs, aboutMe };

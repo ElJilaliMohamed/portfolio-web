@@ -6,4 +6,7 @@ import preact from '@astrojs/preact';
 // https://astro.build/config
 export default defineConfig({
   integrations: [preact()],
+  site: 'https://ElJilaliMohamed.github.io',
+  base: '/portfolio-web',
 });
+

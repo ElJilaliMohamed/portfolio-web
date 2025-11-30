@@ -12,10 +12,7 @@ const { frontmatter } = Astro.props;
       </div>
     </div>
     <div class="img-group">
-      <img src={frontmatter.image[1].src} alt="" />
-      <img src={frontmatter.image[2].src} alt="" />
-      <img src={frontmatter.image[3].src} alt="" />
-      <img src={frontmatter.image[4].src} alt="" />
+      {frontmatter.image.slice(1).map((img = Astro.props) => <img src={img.src} alt="" />)}
     </div>
   </div>
   <style>
@@ -31,17 +28,18 @@ const { frontmatter } = Astro.props;
       padding: 1rem;
     }
     .text {
+      max-width: 100%;
       padding-top: 1em;
       padding-bottom: 1em;
       margin: auto;
-      max-width: 50%;
     }
     .detail-comp .img-group {
       padding: 4rem 0;
     }
-    @media (max-width: 768px) {
+    
+    @media (min-width: 48.0625em) {
       .text {
-        max-width: 100%;
+        max-width: 50%;
       }
     }
   </style>

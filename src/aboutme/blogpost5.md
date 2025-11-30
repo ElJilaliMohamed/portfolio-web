@@ -1,7 +1,7 @@
 ---
 title: "A very nice cup o' coffee!"
 description: '100% plant-based coffee drink'
-image: ['img/blogimg4.jpg','','','','']
+image: ['img/blogimg4.jpg']
 tags: ['coffee']
 ---
 

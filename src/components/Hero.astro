@@ -5,13 +5,13 @@ import mozamPolaroid from '../collabs/img/mozam-polaroid.webp';
 ---
 
 <div class="hero__img">
-  <div class="hero-comp">
+  <div class="gsap-hero hero-comp">
     <p class="regularText hero-txt orbitron-style">Art, drawing, designing, coding. Just being clever with concepts on different types of media, especially manga storytelling.</p>
     <Image src={paperMozam} alt="mozam" srcset="" class="paper-mozam" width={600} />
   </div>
-  <Image src={mozamPolaroid} alt="mozam" srcset="" class="mozam" />
+  <Image src={mozamPolaroid} alt="mozam" srcset="" class="gsap-hero mozam" />
 </div>
-
+<script src="../scripts/gsap.js"></script>
 <style>
   .hero__img {
     display: flex;
@@ -42,3 +42,4 @@ import mozamPolaroid from '../collabs/img/mozam-polaroid.webp';
     }
   }
 </style>
+

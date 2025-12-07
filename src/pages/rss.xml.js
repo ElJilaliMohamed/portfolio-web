@@ -7,11 +7,11 @@ export async function GET(context) {
     stylesheet: '/rss/styles.xsl',
     title: 'cool stuff',
     description: 'My journey learning Astro',
-    site: import.meta.env.SITE, 
+    site: import.meta.env.SITE,
     items: posts.map((post) => ({
       title: post.data.title,
       description: post.data.description,
-      link: `/portfolio-web/blog/${post.id}/`,
+      link: post.url,
     })),
     customData: `<language>en-us</language>`,
   });

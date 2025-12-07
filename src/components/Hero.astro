@@ -7,11 +7,12 @@ import mozamPolaroid from '../collabs/img/mozam-polaroid.webp';
 <div class="hero__img">
   <div class="gsap-hero hero-comp">
     <p class="regularText hero-txt orbitron-style">Art, drawing, designing, coding. Just being clever with concepts on different types of media, especially manga storytelling.</p>
-    <Image src={paperMozam} alt="mozam" srcset="" class="paper-mozam" width={600} />
+    <Image src={paperMozam} alt="mozam" srcset="" format="avif" inferSize class="paper-mozam" width={600} />
   </div>
-  <Image src={mozamPolaroid} alt="mozam" srcset="" class="gsap-hero mozam" />
+  <Image src={mozamPolaroid} alt="mozam" format="avif" inferSize class="gsap-hero mozam" widths={[256, 577, 864, 1120, 1320, 1500, 1660, 1800]} sizes="(min-width: 1000px) 30vw, 80vw" />
 </div>
 <script src="../scripts/gsap.js"></script>
+
 <style>
   .hero__img {
     display: flex;
@@ -42,4 +43,3 @@ import mozamPolaroid from '../collabs/img/mozam-polaroid.webp';
     }
   }
 </style>
-

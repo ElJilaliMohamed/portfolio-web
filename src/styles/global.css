@@ -23,6 +23,18 @@ body {
   --space-xl: clamp(3rem, 2.6932rem + 1.3636vw, 3.75rem);
   /* Space 2xl: 56px → 70px */
   --space-2xl: clamp(3.5rem, 3.5909rem + 1.8182vw, 4.4rem);
+
+  --pagefind-ui-scale: 1;
+  --pagefind-ui-primary: #034ad8;
+  --pagefind-ui-text: #393939;
+  --pagefind-ui-background: #ffffff;
+  --pagefind-ui-border: #eeeeee;
+  --pagefind-ui-tag: #eeeeee;
+  --pagefind-ui-border-width: 2px;
+  --pagefind-ui-border-radius: 8px;
+  --pagefind-ui-image-border-radius: 8px;
+  --pagefind-ui-image-box-ratio: 3 / 2;
+  --pagefind-ui-font: 'orbitron', sans-serif;
 }
 
 nav {

@@ -8,5 +8,8 @@ export default defineConfig({
   integrations: [preact()],
   site: 'https://ElJilaliMohamed.github.io',
   base: '/portfolio-web/',
+  image: {
+    layout: 'constrained',
+    domains: ['astro.build'],
+  },
 });
-

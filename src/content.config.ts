@@ -2,6 +2,10 @@
 import { glob } from "astro/loaders";
 // Import utilities from `astro:content`
 import { z, defineCollection } from "astro:content";
+import { rssSchema } from '@astrojs/rss';
+
+const image = () => z.object({ url: z.string(), alt: z.string() });
+
 const collabs = defineCollection({
 
     loader: glob({pattern: '**/[^_]*.md', base: "./src/collabs" }),
@@ -11,18 +15,15 @@ const collabs = defineCollection({
         image:z.array(image()),
 
       })
-
 })
-
 const aboutMe = defineCollection({
 
   loader: glob({pattern: '**/[^_]*.md', base: "./src/aboutme" }),
-  schema:({image}) => z.object({
-      title: z.string(),
-      description: z.string(),
-      image:z.array(image()),
-
-    })
+  schema:({image}) => rssSchema.extend({
+    title: z.string(),
+    description: z.string(),
+    image: z.array(image()),
+  }),
 
 })
 

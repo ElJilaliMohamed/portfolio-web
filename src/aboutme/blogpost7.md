@@ -1,7 +1,7 @@
 ---
 title: "Interesting novel collection"
 description: 'Franz Kafka collected works'
-image: ['img/blogpic11.jpg']
+cover: ['img/blogpic11.jpg']
 tags: ['coffee']
 ---
 

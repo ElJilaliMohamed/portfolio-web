@@ -2,19 +2,17 @@ import rss, { pagesGlobToRssItems } from '@astrojs/rss';
 import { getCollection } from 'astro:content';
 
 export async function GET(context) {
-  const posts = await getCollection('blog');
+  const posts = await getCollection('aboutMe');
   return rss({
-    title: 'My little adventures | Blog',
-    description: 'Some cool stuff I experience in life.',
+    stylesheet: 'portfolio-web/rss/styles.xsl',
+    title: 'cool stuff',
+    description: 'My journey learning Astro',
     site: context.site,
-    items: await Promise.all(
-      posts.map(async (post) => ({
-        title: post.data.title,
-        description: post.data.description,
-        trailingSlash: false,
-        stylesheet: '/rss/styles.xsl',
-      }))
-    ),
+    items: posts.map((post) => ({
+      title: post.data.title,
+      description: post.data.description,
+      link: `portfolio-web/blog/${post.id}/`,
+    })),
     customData: `<language>en-us</language>`,
   });
 }

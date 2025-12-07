@@ -18,12 +18,9 @@ const allPosts = await getCollection('collabs');
     <div class="bg-img">
       <BaseLayout title={pageTitle}>
         <Hero />
-
-        <link rel="alternate" type="application/rss+xml" title="Your Site's Title" href={new URL('rss.xml', Astro.site)} />
-
         <div class="items-horizontal">
           <div class="one-item">
-            {allPosts.map((post) => <BlogPost url={`/content/${post.id}`} title={post.data.title} description={post.data.description} image={post.data.image[0].src} class="one-item" />)}
+            {allPosts.map((post) => <BlogPost url={`/content/${post.id}`} title={post.data.title} description={post.data.description} cover={post.data.cover[0]} class="one-item" />)}
           </div>
         </div>
       </BaseLayout>

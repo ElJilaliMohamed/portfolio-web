@@ -1,7 +1,7 @@
 ---
 title: "New manga in my collection"
 description: 'Over Bleed & Tank Chair in the shelf'
-image: ['img/blogpic12.jpg']
+cover: ['img/blogpic12.jpg']
 tags: ['coffee']
 ---
 

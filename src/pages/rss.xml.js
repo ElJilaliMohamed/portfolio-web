@@ -23,10 +23,4 @@ export async function GET(context) {
     })),
     customData: `<language>en-us</language>`,
   });
-
-  return new Response(feed.body, {
-    headers: {
-      'Content-Type': 'application/xml; charset=utf-8', // Force correct MIME type
-    },
-  });
 }   

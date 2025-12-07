@@ -1,7 +1,7 @@
 ---
 title: 'Comic for creative studio "TSE"'
 description: 'My 2nd collab & first time working with people from Berlin'
-image: ['img/collab-webtab-02.png', 'img/collab2charadesign.png', 'img/collab2charadesign2.png', 'img/collab2BTS.jpg', 'img/collab2BTS2.jpg']
+cover: ['img/collab-webtab-02.png', 'img/collab2charadesign.png', 'img/collab2charadesign2.png', 'img/collab2BTS.jpg', 'img/collab2BTS2.jpg']
 tags: ['art project']
 ---
 

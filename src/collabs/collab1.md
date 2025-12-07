@@ -1,7 +1,7 @@
 ---
 title: 'ZLDR T-shirt illustrations'
 description: 'First paid client work to draw illustrations.'
-image: ['img/collab-webtab-01.png', 'img/ZLDRofficial_01.jpg', 'img/ZLDRofficial_02.jpg', 'img/ZLDRofficial_03.jpg']
+cover: ['img/collab-webtab-01.png', 'img/ZLDRofficial_01.jpg', 'img/ZLDRofficial_02.jpg', 'img/ZLDRofficial_03.jpg']
 tags: ['art project']
 ---
 

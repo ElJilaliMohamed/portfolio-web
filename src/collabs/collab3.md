@@ -1,7 +1,7 @@
 ---
 title: 'My first published comic illustration'
 description: 'A drawing to celebrate the release of the last comic book.'
-image: ['img/collab-webtab-03.png', 'img/collab3BTS.jpg', 'img/collab3BTS2.jpg']
+cover: ['img/collab-webtab-03.png', 'img/collab3BTS.jpg', 'img/collab3BTS2.jpg']
 
 tags: ['art project']
 ---

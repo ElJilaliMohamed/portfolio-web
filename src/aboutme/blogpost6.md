@@ -1,7 +1,7 @@
 ---
 title: "I Met the virtuoso artist Enki Bilal"
 description: 'Conference & presentation of Enki Bilal'
-image: ['img/blogpic10.jpg']
+cover: ['img/blogpic10.jpg']
 tags: ['coffee']
 ---
 

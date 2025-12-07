@@ -12,7 +12,7 @@ const collabs = defineCollection({
     schema:({image}) => z.object({
         title: z.string(),
         description: z.string(),
-        image:z.array(image()),
+        cover:z.array(image()),
 
       })
 })
@@ -22,7 +22,7 @@ const aboutMe = defineCollection({
   schema:({image}) => rssSchema.extend({
     title: z.string(),
     description: z.string(),
-    image: z.array(image()),
+    cover: z.array(image()),
   }),
 
 })

@@ -1,7 +1,7 @@
 ---
 title: "Paul Thomas Anderson's recent film"
 description: 'Experiencing films in bigger screens in Kinepolis'
-image: ['img/blogimg3.jpg']
+cover: ['img/blogimg3.jpg']
 tags: ['film']
 ---
 

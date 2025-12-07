@@ -1,7 +1,7 @@
 ---
 title: 'Behind The Atelier: my own manga/graphic novel'
 description: "Between Wasteland's Fate manga"
-image: ['img/blogimg9.png','img/blogimg1.png','img/blogimg6.jpg','img/blogimg7.jpg','img/blogimg8.jpg']
+cover: ['img/blogimg9.png','img/blogimg1.png','img/blogimg6.jpg','img/blogimg7.jpg','img/blogimg8.jpg']
 tags: ['storytelling & art']
 ---
 

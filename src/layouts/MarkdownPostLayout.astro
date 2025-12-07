@@ -1,18 +1,20 @@
 ---
+import { Image } from 'astro:assets';
 import BaseLayout from '../layouts/BaseLayout.astro';
+
 const { frontmatter } = Astro.props;
 ---
 
 <BaseLayout title={frontmatter.title}>
   <div class="content orbitron-style">
     <div class="top-part">
-      <img src={frontmatter.image[0].src} alt="" />
+      <img src={frontmatter.cover[0].src} alt="" />
       <div class="text">
         <slot />
       </div>
     </div>
     <div class="img-group">
-      {frontmatter.image.slice(1).map((img = Astro.props) => <img src={img.src} alt="" />)}
+      {frontmatter.cover.slice(1).map((cover = Astro.props) => <img src={cover.src} alt="" />)}
     </div>
   </div>
   <style>
@@ -36,7 +38,7 @@ const { frontmatter } = Astro.props;
     .detail-comp .img-group {
       padding: 4rem 0;
     }
-    
+
     @media (min-width: 48.0625em) {
       .text {
         max-width: 50%;

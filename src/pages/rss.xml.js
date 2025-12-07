@@ -1,6 +1,6 @@
 import rss, { pagesGlobToRssItems } from '@astrojs/rss';
 import { getCollection } from 'astro:content';
-import sanitizeHtml from 'sanitize-html';
+import { sanitizeHtml } from 'sanitize-html';
 import MarkdownIt from 'markdown-it';
 
 const parser = new MarkdownIt();

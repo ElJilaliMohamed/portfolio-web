@@ -11,6 +11,7 @@ const allPosts = await getCollection('collabs');
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
+
     <title>{pageTitle}</title>
   </head>
   <body>
@@ -18,8 +19,12 @@ const allPosts = await getCollection('collabs');
       <BaseLayout title={pageTitle}>
         <Hero />
 
+        <link rel="alternate" type="application/rss+xml" title="Your Site's Title" href={new URL('rss.xml', Astro.site)} />
+
         <div class="items-horizontal">
-          {allPosts.map((post) => <BlogPost url={`/content/${post.id}`} title={post.data.title} description={post.data.description} image={post.data.image[0].src} />)}
+          <div class="one-item">
+            {allPosts.map((post) => <BlogPost url={`/content/${post.id}`} title={post.data.title} description={post.data.description} image={post.data.image[0].src} class="one-item" />)}
+          </div>
         </div>
       </BaseLayout>
     </div>
@@ -27,10 +32,15 @@ const allPosts = await getCollection('collabs');
 </html>
 <style>
   .items-horizontal {
+    background-image: url(../collabs/img/grid-bg.png);
+    background-size: contain;
+  }
+  .one-item {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    background-image: url(../collabs/img/grid-bg.png);
-    background-size: contain;
+  }
+  #search {
+    background-color: black;
   }
 </style>

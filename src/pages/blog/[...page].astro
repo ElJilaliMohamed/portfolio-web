@@ -1,0 +1,47 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BlogPost from '../../components/BlogPost.astro';
+import Pagination from '../../components/Pagination.astro';
+const pageTitle = 'About Me';
+
+export async function getStaticPaths({ paginate }) {
+  const allPosts = await getCollection('aboutMe');
+  return paginate(allPosts, { pageSize: 6 });
+}
+const { page } = Astro.props;
+const posts = page.data;
+---
+
+<BaseLayout title={`${pageTitle}, page ${page.currentPage} of 2`}>
+  <div class="container">
+    <p class="regularText orbitron-style">Here you can learn more about things I did these past weeks</p>
+    <p class="subjectText orbitron-style">October - November Blog</p>
+
+    <div id="search" class="searchbar"></div>
+
+    <div data-pagefind-ignore class="items-horizontal">
+      {posts.map((post) => <BlogPost url={`/blog/${post.id}`} title={post.data.title} description={post.data.description} image={post.data.image[0].src} />)}
+    </div>
+    <Pagination previousPageUrl={page.url.prev} nextPageUrl={page.url.next} />
+  </div>
+</BaseLayout>
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    new PagefindUI({ element: '#search', showSubResults: true, showImages: false });
+  });
+</script>
+
+<style>
+  .items-horizontal {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-image: url(../../collabs/img/grid-bg.png);
+    background-size: contain;
+  }
+  .searchbar {
+    margin: 1rem 0 1rem 0;
+  }
+</style>

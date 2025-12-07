@@ -5,6 +5,7 @@ image: ['img/collab-webtab-01.png', 'img/ZLDRofficial_01.jpg', 'img/ZLDRofficial
 tags: ['art project']
 ---
 
+
 My very first client work for a group of young Flemish music artists called ZLDR. They wanted me to make illustrations
 
 that they could use for T-shirt, hoodies & stickers.

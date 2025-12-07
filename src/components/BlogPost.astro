@@ -5,14 +5,15 @@ import { Image } from 'astro:assets';
 const { title, url, description, image } = Astro.props;
 ---
 
-<div class="btn-bg">
+<div  class="btn-bg">
   <a href=`/portfolio-web${url}` class="orbitron-style">
     <div class="title-comp">
-      <Image src={speechBalloon} alt="" class="balloon-img" />
+      <Image src={speechBalloon} alt="" format="avif" inferSize class="balloon-img" />
       <p class="title-balloon absolute-center">{title}</p>
     </div>
     <div>
-      <img src={image} alt="" width="700" class="img-collab" />
+      <img src={image} alt="" format="avif" inferSize class="img-collab" sizes="(min-width: 1100px) 29vw, (min-width: 780px) 40vw, calc(100vw - 56px)" />
+      <!-- 256×252, 623×613, 912×898, 1250×1231, 1520×1496, 1740×1713 -->
       <div class="desc-comp">
         <p class="regularText absolute-center">{description}</p>
         <Image src={rippedPaper} alt="" class="ripped-paper" />
@@ -58,7 +59,7 @@ const { title, url, description, image } = Astro.props;
     .desc {
       font-weight: 500;
     }
-    
+
     @media (min-width: 48.0625em) {
       .btn-bg {
         max-width: 40%;

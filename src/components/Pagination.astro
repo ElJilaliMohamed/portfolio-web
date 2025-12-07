@@ -1,0 +1,56 @@
+---
+const { currentPage, previousPageUrl, nextPageUrl } = Astro.props;
+---
+
+<div class="pagination">
+  {
+    previousPageUrl && (
+      <div class="arrow-icon-prev">
+        <a href={previousPageUrl} class="prev-page">
+          <div class="chevron-direction">
+            <svg xmlns="http://www.w3.org/2000/svg" width="52" height="52" fill="currentColor" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0" />
+            </svg>
+            <p class="regularText orbitron-style">Previous</p>
+          </div>
+        </a>
+      </div>
+    )
+  }
+  {
+    nextPageUrl && (
+      <div class="arrow-icon-next">
+        <a href={nextPageUrl} class="next-page">
+          <div class="chevron-direction">
+            <p class="regularText orbitron-style">Next</p>
+            <svg xmlns="http://www.w3.org/2000/svg" width="52" height="52" fill="currentColor" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708" />
+            </svg>
+          </div>
+        </a>
+      </div>
+    )
+  }
+</div>
+<style>
+  .pagination {
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+  }
+  .chevron-direction {
+    display: flex;
+    align-items: center;
+  }
+  .arrow-icon-prev,
+  .arrow-icon-next {
+    transition: 0.5s;
+    margin: 1.5rem;
+  }
+  .arrow-icon-prev:hover {
+    transform: translateX(-10px);
+  }
+  .arrow-icon-next:hover {
+    transform: translateX(10px);
+  }
+</style>

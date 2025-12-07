@@ -4,14 +4,14 @@ import { getCollection } from 'astro:content';
 export async function GET(context) {
   const posts = await getCollection('aboutMe');
   return rss({
-    stylesheet: 'portfolio-web/rss/styles.xsl',
+    stylesheet: '/rss/styles.xsl',
     title: 'cool stuff',
     description: 'My journey learning Astro',
-    site: context.site,
+    site: import.meta.env.SITE, 
     items: posts.map((post) => ({
       title: post.data.title,
       description: post.data.description,
-      link: `portfolio-web/blog/${post.id}/`,
+      link: `/portfolio-web/blog/${post.id}/`,
     })),
     customData: `<language>en-us</language>`,
   });
